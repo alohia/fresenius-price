@@ -1,10 +1,10 @@
 function calculateTotal() {
   // Get input values
-  const product1Qty = parseInt(document.getElementById('product1').value);
-  const product2Qty = parseInt(document.getElementById('product2').value);
-  const product3Qty = parseInt(document.getElementById('product3').value);
-  const product4Qty = parseInt(document.getElementById('product4').value);
-  const product5Qty = parseInt(document.getElementById('product5').value);
+  const product1Qty = parseInt(document.getElementById('product1').value) || 0;
+  const product2Qty = parseInt(document.getElementById('product2').value) || 0;
+  const product3Qty = parseInt(document.getElementById('product3').value) || 0;
+  const product4Qty = parseInt(document.getElementById('product4').value) || 0;
+  const product5Qty = parseInt(document.getElementById('product5').value) || 0;
   
   // Prices of each product
   const productPrices = [327.04, 151.20, 35.84, 437.85, 330.75];
