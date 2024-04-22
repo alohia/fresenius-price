@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Price Calculator</title>
+</head>
+<body>
+<h1>Product Price Calculator</h1>
+<form id="calculatorForm">
+  <div>
+    <label for="product1">Product 1 Quantity:</label>
+    <input type="number" id="product1" name="product1" value="0" min="0">
+  </div>
+  <div>
+    <label for="product2">Product 2 Quantity:</label>
+    <input type="number" id="product2" name="product2" value="0" min="0">
+  </div>
+  <div>
+    <label for="product3">Product 3 Quantity:</label>
+    <input type="number" id="product3" name="product3" value="0" min="0">
+  </div>
+  <div>
+    <label for="product4">Product 4 Quantity:</label>
+    <input type="number" id="product4" name="product4" value="0" min="0">
+  </div>
+  <div>
+    <label for="product5">Product 5 Quantity:</label>
+    <input type="number" id="product5" name="product5" value="0" min="0">
+  </div>
+  <button type="button" onclick="calculateTotal()">Calculate</button>
+</form>
+<div id="results"></div>
+<script src="calculator.js"></script>
+</body>
+</html>
