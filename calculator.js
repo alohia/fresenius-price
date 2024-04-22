@@ -13,11 +13,11 @@ function calculateTotal() {
   
   // Calculate total price for each product
   const productTotalPrices = [
-    product1Qty * packSizes[0] * productPrices[0],
-    product2Qty * packSizes[1] * productPrices[1],
-    product3Qty * packSizes[2] * productPrices[2],
-    product4Qty * packSizes[3] * productPrices[3],
-    product5Qty * packSizes[4] * productPrices[4]
+    Math.round(product1Qty * packSizes[0] * productPrices[0] * 100) / 100,
+    Math.round(product2Qty * packSizes[1] * productPrices[1] * 100) / 100,
+    Math.round(product3Qty * packSizes[2] * productPrices[2] * 100) / 100,
+    Math.round(product4Qty * packSizes[3] * productPrices[3] * 100) / 100,
+    Math.round(product5Qty * packSizes[4] * productPrices[4] * 100) / 100
   ];
   
   // Calculate overall total
