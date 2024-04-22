@@ -8,15 +8,16 @@ function calculateTotal() {
   
   // Prices of each product
   const productPrices = [327.04, 151.20, 35.84, 437.85, 330.75];
+  const packSizes = [30, 20, 100, 12, 12];
   const productNames = ['VOLUVEN 6% 250 ML', 'KABILYTE 500 ML', 'KABIPARA 100 ML BOTT', 'INTRALIPID 20% 250 ML', 'AMINOWEL 5% 250 ML'];
   
   // Calculate total price for each product
   const productTotalPrices = [
-    product1Qty * productPrices[0],
-    product2Qty * productPrices[1],
-    product3Qty * productPrices[2],
-    product4Qty * productPrices[3],
-    product5Qty * productPrices[4]
+    product1Qty * packSizes[0] * productPrices[0],
+    product2Qty * packSizes[1] * productPrices[1],
+    product3Qty * packSizes[2] * productPrices[2],
+    product4Qty * packSizes[3] * productPrices[3],
+    product5Qty * packSizes[4] * productPrices[4]
   ];
   
   // Calculate overall total
