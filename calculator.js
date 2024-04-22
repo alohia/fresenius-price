@@ -7,7 +7,8 @@ function calculateTotal() {
   const product5Qty = parseInt(document.getElementById('product5').value);
   
   // Prices of each product
-  const productPrices = [10, 20, 30, 40, 50];
+  const productPrices = [327.04, 151.20, 35.84, 437.85, 330.75];
+  const productNames = ['VOLUVEN 6% 250 ML', 'KABILYTE 500 ML', 'KABIPARA 100 ML BOTT', 'INTRALIPID 20% 250 ML', 'AMINOWEL 5% 250 ML'];
   
   // Calculate total price for each product
   const productTotalPrices = [
@@ -25,7 +26,7 @@ function calculateTotal() {
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
   for (let i = 0; i < productTotalPrices.length; i++) {
-    resultsDiv.innerHTML += `Product ${i + 1} Total: $${productTotalPrices[i]}<br>`;
+    resultsDiv.innerHTML += `${productNames[i]} Total: ₹ ${productTotalPrices[i]}<br>`;
   }
-  resultsDiv.innerHTML += `Overall Total: $${overallTotal}`;
+  resultsDiv.innerHTML += `Overall Total: ₹ ${overallTotal}`;
 }
