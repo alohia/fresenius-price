@@ -27,7 +27,7 @@ function calculateTotal() {
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
   for (let i = 0; i < productTotalPrices.length; i++) {
-    resultsDiv.innerHTML += `${productNames[i]} Total: ₹ ${productTotalPrices[i]}<br>`;
+    resultsDiv.innerHTML += `${productNames[i]} Total: ₹ ${Math.round(productTotalPrices[i] * 100) / 100}<br>`;
   }
-  resultsDiv.innerHTML += `Overall Total: ₹ ${overallTotal}`;
+  resultsDiv.innerHTML += `Overall Total: ₹ ${Math.round(overallTotal * 100) / 100}`;
 }
