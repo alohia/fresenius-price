@@ -7,7 +7,7 @@ function calculateTotal() {
   const product5Qty = parseInt(document.getElementById('product5').value) || 0;
   
   // Prices of each product
-  const productPrices = [340.97, 152.44, 33.87, 493.29, 361.57];
+  const productPrices = [340.96, 152.44, 33.87, 493.29, 361.57];
   const packSizes = [30, 20, 100, 12, 12];
   const productNames = ['VOLUVEN 6% 250 ML', 'KABILYTE 500 ML', 'KABIPARA 100 ML BOTT', 'INTRALIPID 20% 250 ML', 'AMINOWEL 5% 250 ML'];
   
