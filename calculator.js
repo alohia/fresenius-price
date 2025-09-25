@@ -1,33 +1,57 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const tableBody = document.getElementById('product-table-body');
+
+  PRODUCT_DATA.forEach((product, index) => {
+    const row = document.createElement('tr');
+
+    const nameCell = document.createElement('td');
+    nameCell.textContent = product.name;
+    row.appendChild(nameCell);
+
+    const packSizeCell = document.createElement('td');
+    packSizeCell.textContent = product.packSize;
+    row.appendChild(packSizeCell);
+
+    const priceCell = document.createElement('td');
+    priceCell.textContent = `₹${formatCurrency(getTaxedUnitPrice(product.baseUnitPrice))}`;
+    row.appendChild(priceCell);
+
+    const quantityCell = document.createElement('td');
+    const quantityInput = document.createElement('input');
+    quantityInput.type = 'number';
+    quantityInput.id = getQuantityInputId(index);
+    quantityInput.name = getQuantityInputId(index);
+    quantityInput.min = '0';
+    quantityCell.appendChild(quantityInput);
+    row.appendChild(quantityCell);
+
+    tableBody.appendChild(row);
+  });
+});
+
 function calculateTotal() {
-  // Get input values
-  const product1Qty = parseInt(document.getElementById('product1').value) || 0;
-  const product2Qty = parseInt(document.getElementById('product2').value) || 0;
-  const product3Qty = parseInt(document.getElementById('product3').value) || 0;
-  const product4Qty = parseInt(document.getElementById('product4').value) || 0;
-  const product5Qty = parseInt(document.getElementById('product5').value) || 0;
-  
-  // Prices of each product
-  const productPrices = [340.96, 152.44, 33.87, 493.29, 361.57];
-  const packSizes = [30, 20, 100, 12, 12];
-  const productNames = ['VOLUVEN 6% 250 ML', 'KABILYTE 500 ML', 'KABIPARA 100 ML BOTT', 'INTRALIPID 20% 250 ML', 'AMINOWEL 5% 250 ML'];
-  
-  // Calculate total price for each product
-  const productTotalPrices = [
-    Math.round(product1Qty * packSizes[0] * productPrices[0] * 100) / 100,
-    Math.round(product2Qty * packSizes[1] * productPrices[1] * 100) / 100,
-    Math.round(product3Qty * packSizes[2] * productPrices[2] * 100) / 100,
-    Math.round(product4Qty * packSizes[3] * productPrices[3] * 100) / 100,
-    Math.round(product5Qty * packSizes[4] * productPrices[4] * 100) / 100
-  ];
-  
-  // Calculate overall total
-  const overallTotal = productTotalPrices.reduce((total, price) => total + price, 0);
-  
-  // Display results
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
-  for (let i = 0; i < productTotalPrices.length; i++) {
-    resultsDiv.innerHTML += `${productNames[i]} Total: ₹ ${Math.round(productTotalPrices[i] * 100) / 100}<br>`;
-  }
-  resultsDiv.innerHTML += `Overall Total: ₹ ${Math.round(overallTotal * 100) / 100}`;
+
+  let overallTotal = 0;
+
+  PRODUCT_DATA.forEach((product, index) => {
+    const quantity = parseInt(document.getElementById(getQuantityInputId(index)).value, 10) || 0;
+    const lineTotal =
+      product.packSize * product.baseUnitPrice * quantity * getTaxMultiplier();
+
+    overallTotal += lineTotal;
+
+    resultsDiv.innerHTML += `${product.name} Total: ₹ ${formatCurrency(lineTotal)}<br>`;
+  });
+
+  resultsDiv.innerHTML += `Overall Total: ₹ ${formatCurrency(overallTotal)}`;
+}
+
+function getQuantityInputId(index) {
+  return `quantity-${index}`;
+}
+
+function formatCurrency(value) {
+  return (Math.round(value * 100) / 100).toFixed(2);
 }
