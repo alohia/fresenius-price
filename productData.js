@@ -9,7 +9,7 @@ const PRODUCT_DATA = [
   {
     name: 'KABILYTE 500 ML',
     packSize: 20,
-    baseUnitPrice: 152,
+    baseUnitPrice: 155.92,
   },
   {
     name: 'KABIPARA 100 ML BOTT',
