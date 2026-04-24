@@ -45,7 +45,8 @@ function calculateTotal() {
     resultsDiv.innerHTML += `${product.name} Total: ₹ ${formatCurrency(lineTotal)}<br>`;
   });
 
-  resultsDiv.innerHTML += `Overall Total: ₹ ${formatCurrency(overallTotal)}`;
+  const roundedOverallTotal = Math.round(overallTotal);
+  resultsDiv.innerHTML += `Overall Total: ₹ ${roundedOverallTotal}`;
 }
 
 function getQuantityInputId(index) {
