@@ -4,7 +4,7 @@ const PRODUCT_DATA = [
   {
     name: 'VOLUVEN 6% 250 ML',
     packSize: 30,
-    baseUnitPrice: 324.73,
+    baseUnitPrice: 348.4,
   },
   {
     name: 'KABILYTE 500 ML',
