@@ -24,7 +24,7 @@ const PRODUCT_DATA = [
   {
     name: 'AMINOWEL 5% 250 ML',
     packSize: 12,
-    baseUnitPrice: 344.35,
+    baseUnitPrice: 374,
   },
 ];
 
